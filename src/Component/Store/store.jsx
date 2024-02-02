@@ -10,7 +10,7 @@ const DataCompo = ({ children }) => {
   useEffect(()=>{
     const fetchData=async()=>{
         try{
-            const Response = await axios.get("http://localhost:5500/api/ecom")
+            const Response = await axios.get("https://back-endd-ha9h.onrender.com/api/ecom")
             setData(Response.data)
         }
         catch(err){
