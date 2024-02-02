@@ -1,0 +1,30 @@
+import React, { useContext } from "react";
+import { Store } from "./Store/store";
+import { NavLink } from "react-router-dom";
+
+const Camera = () => {
+  const { data } = useContext(Store);
+
+  const CameraPost = data.filter((item) => item.category === "CAMERA");
+  return (
+    <div className="Parent_container">
+      {CameraPost.map((item) => (
+        <div className="main">
+          <NavLink to={`/dynamic/${item.id}`} className="image">
+            <img src={item.image} alt="" />
+          </NavLink>
+          <NavLink className="Dynamic-navlink" to={`/dynamic/${item.id}`}>
+            <h3>{item.name.slice(0,20)}</h3>
+          </NavLink>
+          <span style={{ color: 'gold', fontSize: '24px' }}>&#9733;    &#9733;   &#9733;</span>
+          
+          <h2>{item.price}</h2>
+          <h2><button>Add To cart</button></h2>
+          
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Camera;

@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;box-sizing: border-box;
+}
+.Cart-cntainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    /* border: 2px solid red; */
+}
+
+.left-side {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+    /* border: 2px solid red; */
+}
+
+.login-btn button {
+    background-color: white;
+    color: black;
+    border-radius: 10em;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 1em 1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
+}
+
+.login-btn button:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+    
+}
+
+.login-btn button:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+}
+
+
+
+.left-side .cart-icon {
+    background-color: white;
+    color: black;
+    border-radius: 10em;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 1em 1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
+}
+.left-side .cart-icon:hover{
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+}
+ .Cart-cntainer input{
+    width: 52%;
+    border-radius: 10px;
+    height: 2.5rem;
+}
+@media screen and (max-width: 768px){
+    .Cart-cntainer{
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    input{
+        width: 100%;
+    }
+}
