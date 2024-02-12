@@ -25,6 +25,7 @@
   justify-content: space-evenly;
   align-items: center;
   gap: 5rem;
+  width: 100%;
 }
 
 .navbar ul li {
@@ -79,7 +80,7 @@
   .navbar .menu {
     display: flex;
     position: relative;
-    left: 50%;
+    /* left: 50%; */
     color: white;
   }
 

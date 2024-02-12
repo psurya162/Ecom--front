@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import { Store } from "./Store/store";
 import { NavLink } from "react-router-dom";
+import { addtoCart } from "../feature/cartSllice";
+import { useDispatch } from "react-redux";
 
 const HeadPhone = () => {
   const { data, addToCart } = useContext(Store);
+  const dispatch=useDispatch()
 
   const HeadphonePost = data.filter((item) => item.category === "HEADPHONE");
 
-  const handleAddToCart = (item) => {
-    // Call the addToCart function from your context
-    addToCart(item);
-  };
+  
 
   return (
     <div className="Parent_container">
@@ -25,7 +25,7 @@ const HeadPhone = () => {
           <span style={{ color: 'gold', fontSize: '24px' }}>&#9733; &#9733; &#9733;</span>
           <h2>{item.price}</h2>
           <h2>
-            <button onClick={() => handleAddToCart(item)}>Add To Cart</button>
+            <button onClick={()=>dispatch(addtoCart(item))}>Add To Cart</button>
           </h2>
         </div>
       ))}

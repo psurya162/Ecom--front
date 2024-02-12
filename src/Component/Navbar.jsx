@@ -16,21 +16,20 @@ import Login from "./Login";
 
 import DataCompo from "./Store/store";
 import DynamicCompo from "./DynamicCompo";
+import Checkout from "./Checkout";
+import Order from "./Order";
 
 const Navbar = () => {
-
   const [menuOpen, setMenuopen] = useState(false);
   const togglemenu = () => {
     setMenuopen(!menuOpen);
   };
   const closeMenu = () => {
-    setMenuopen(false)
-  }
+    setMenuopen(false);
+  };
   return (
     <>
-      
-        
-        <div className="navbar">
+      <div className="navbar">
         <div className="menu" onClick={togglemenu}>
           <i
             class={menuOpen ? "fa-solid fa-square-xmark" : "fa-solid fa-bars"}
@@ -62,29 +61,27 @@ const Navbar = () => {
               HeadPhone
             </NavLink>
           </li>
-          
         </ul>
       </div>
-          <DataCompo>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/camera" element={<Camera />} />
-              <Route path="/mobile" element={<Mobile />} />
-              <Route path="/laptop" element={<Laptop />} />
-              <Route path="/headphone" element={<HeadPhone />} />
-              <Route path="/dynamic/:id" element={<DynamicCompo />} />
-              <Route path="/login" element={<Login/>} />
-              <Route path="/register" element={<SignUp/>}/>
-            </Routes>
-          </DataCompo>
-        
-      
+      <DataCompo>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/camera" element={<Camera />} />
+          <Route path="/mobile" element={<Mobile />} />
+          <Route path="/laptop" element={<Laptop />} />
+          <Route path="/headphone" element={<HeadPhone />} />
+          <Route path="/dynamic/:id" element={<DynamicCompo />} />
+          <Route path="/login" element={<Login />} />
+
+          <Route path="/register" element={<SignUp/>}/>
+          
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/order" element={<Order/>}/>
+
+        </Routes>
+      </DataCompo>
     </>
   );
 };
 
 export default Navbar;
-
-
-
-      
